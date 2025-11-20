@@ -1,13 +1,13 @@
-from sklearn.feature_extraction.text import TfidfVectorizer
-import numpy as np
-import json
-from src.config import get_config
-from src.data.datasets import load_corpus
+import os
 
 def build_index(corpus_path: str, out_dir: str = "indexes"):
     config = get_config()
     corpus = load_corpus(corpus_path)
     corpus_texts = [doc["text"] for doc in corpus]
+
+    # Ensure the output directory exists
+    if not os.path.exists(out_dir):
+        os.makedirs(out_dir)
 
     # TF-IDF Vectorizer
     vectorizer = TfidfVectorizer()
@@ -22,5 +22,3 @@ def build_index(corpus_path: str, out_dir: str = "indexes"):
             mapping_entry = {"doc_id": doc["id"], "text": doc["text"]}
             f.write(json.dumps(mapping_entry, ensure_ascii=False) + "\n")
 
-if __name__ == "__main__":
-    build_index("data/corpus.jsonl", "indexes")
