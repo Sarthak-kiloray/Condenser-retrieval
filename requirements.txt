@@ -1,8 +1,3 @@
-torch
-transformers
-datasets
-faiss-cpu
-sentencepiece
 fastapi
 uvicorn[standard]
 pydantic
@@ -11,4 +6,3 @@ numpy
 tqdm
 pandas
 python-dotenv
-
