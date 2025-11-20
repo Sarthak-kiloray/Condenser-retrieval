@@ -1,0 +1,14 @@
+torch
+transformers
+datasets
+faiss-cpu
+sentencepiece
+fastapi
+uvicorn[standard]
+pydantic
+scikit-learn
+numpy
+tqdm
+pandas
+python-dotenv
+

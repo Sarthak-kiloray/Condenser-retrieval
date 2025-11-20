@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condenser Retrieval UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Condenser Retrieval</h1>
+            <p>Dense retrieval system with semantic search</p>
+        </header>
+
+        <main>
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" id="queryInput" placeholder="Enter your query..." />
+                    <input type="number" id="topKInput" value="10" min="1" max="100" />
+                    <button id="searchBtn">Search</button>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div id="status" class="status"></div>
+                <div id="results" class="results"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
